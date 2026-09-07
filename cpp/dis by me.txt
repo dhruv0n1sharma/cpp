@@ -1,0 +1,31 @@
+
+#include <iostream>
+
+using namespace std;
+ class product{
+     private:
+    int price;
+    
+    public:
+    void input(){
+        cout<<"enter the product price :";
+        cin>> price;
+    }
+    
+   friend  void  display(product a);
+    
+ };
+ 
+ void display(product a){ //argunmnrt me uper bale c;ass ka name and obj aata h
+     
+      cout<<"the price of product after discount is "<<a.price-(a.price*0.1);
+      
+ }
+ 
+ int main(){
+     product a;
+     a.input();
+     display(a);// isme uper bale claas ka obj aata h
+      retuen0;
+ }
+  

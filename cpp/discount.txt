@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+
+// --- MODULE 1: CLASS ---
+class Product {
+private:
+    std::string name; 
+    double price;     
+
+public:
+    // Humne constructor hata diya! Ab seedhe input function hai.
+    void inputDetails() {
+        std::cout << "Enter Product Name: ";
+        std::cin >> name; 
+        
+        std::cout << "Enter Product Price: Rs. ";
+        std::cin >> price; 
+    }
+
+    // Friend Function ki declaration
+    friend void calculateDiscount(Product p);
+};
+
+// --- MODULE 2: FRIEND FUNCTION ---
+void calculateDiscount(Product p) {
+    double discount = p.price * 0.10; 
+    double finalPrice = p.price - discount;
+
+    std::cout << "\n--- BILL DETAILS ---" << std::endl;
+    std::cout << "Product Name: " << p.name << std::endl;
+    std::cout << "Original Price: Rs. " << p.price << std::endl;
+    std::cout << "10% Discount: Rs. " << discount << std::endl;
+    std::cout << "Final Price to Pay: Rs. " << finalPrice << std::endl;
+}
+
+// --- MODULE 3: MAIN FUNCTION ---
+int main() {
+    Product userProduct;        // 1. Khali object bana
+    userProduct.inputDetails(); // 2. Public function se input liya
+    calculateDiscount(userProduct); // 3. Friend function se discount dikhaya
+
+    return 0;
+}

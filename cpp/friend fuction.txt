@@ -1,0 +1,29 @@
+
+#include <iostream>
+
+using namespace std;
+ class box{
+    private:
+     int weight;
+     
+   public:
+   void input()
+   {
+       cout << "enter ther weight";
+       cin >> weight;
+   }
+   
+   friend void disply(box b); //argunment class name and object declear frined function
+ };
+ 
+ void disply(box b) {
+     cout<<"the weight oft the bhdsb "<<b.weight;
+     
+     }
+     
+     
+     int main(){
+         box dh;
+         dh. input();
+         disply(dh);
+     }

@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class calc{
+  private:
+  int num;
+  public:
+      void input();  // us declear  the function
+      void display();
+  
+};
+
+ inline void calc:: input()
+ {
+     cout<<"enter  any number";
+     cin>> num;
+ }
+ 
+ inline void calc:: display(){
+     cout<<"square or number is "<<num*num;
+ }
+ 
+ int main (){
+     calc a;
+     a.input();
+     a.display();
+     
+ }

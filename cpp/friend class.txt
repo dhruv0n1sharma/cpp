@@ -1,0 +1,34 @@
+
+#include <iostream>
+
+using namespace std;
+ class data{
+private:
+int pin;
+
+public:
+void input(){
+    cout<<"enter the pin";
+    cin>>pin;
+}
+friend class datadisplay;  //decler  friend claa 2 to 1
+
+ };
+  class datadisplay{
+public:
+void print(data a)
+{
+    cout<<"the pin is "<<a.pin;
+}
+  };
+
+
+  int main(){
+data d;
+datadisplay dd;
+d.input();
+dd.print(d);
+
+
+
+  }

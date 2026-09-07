@@ -1,0 +1,29 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+using namespace std;
+
+class student{
+
+private:
+string name;
+ int rollno;
+
+public:
+void input(){
+ cout<<"enter the name";
+ cin>>name;
+ cout<<"enter roll no";
+ cin>>rollno;
+}
+
+void disply(){
+    cout<<"name is"<<name << endl;
+    cout<<"rollno is "<<rollno << endl;
+}
+};
+ int main(){
+    student s1;
+    s1.input();
+    s1.disply();
+ }

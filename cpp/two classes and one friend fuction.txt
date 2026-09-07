@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+class MangoBox; 
+
+class AppleBox {
+private:
+    int apples; 
+
+public:
+    void inputApples() {
+        cout << "Enter number of Apples: ";
+        cin >> apples;
+    }
+
+    friend void totalFruits(AppleBox a, MangoBox m); 
+};
+
+class MangoBox {
+private:
+    int mangoes; 
+
+public:
+    void inputMangoes() {
+        cout << "Enter number of Mangoes: ";
+        cin >> mangoes;
+    }
+
+    friend void totalFruits(AppleBox a, MangoBox m); 
+};
+
+void totalFruits(AppleBox a, MangoBox m) {
+    int total = a.apples + m.mangoes; 
+    cout << "\n--- FRUIT BASKET ---" << endl;
+    cout << "Total fruits in the house: " << total << endl;
+}
+
+int main() {
+    AppleBox box1; 
+    MangoBox box2; 
+
+    box1.inputApples();  
+    box2.inputMangoes();  
+
+    totalFruits(box1, box2); 
+
+    return 0;
+}

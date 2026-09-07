@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+class rectangle{
+    private :
+    int length;
+    int breadth;
+    //int rec;
+     public:
+     void input()
+     {
+         cout<<"enter the value of length :" ;
+         cin>> length;
+            cout<<"enter the value of breadth :" ;
+         cin>> breadth;
+     }
+     friend void disply(rectangle r);
+     
+};
+     void disply(rectangle r){
+        int  rec;
+        rec = r.length*r.breadth;
+        cout<<"rectangle is :"<<rec; /// important 
+     }
+     
+      int main(){
+          
+          rectangle a;
+          a.input();
+          disply(a);
+      }
